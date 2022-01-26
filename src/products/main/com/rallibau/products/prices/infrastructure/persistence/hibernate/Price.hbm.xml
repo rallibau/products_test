@@ -1,0 +1,41 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.rallibau.products.prices.domain.Price" table="PRICE">
+        <composite-id name="id" class="com.rallibau.products.prices.domain.PriceId" access="field">
+            <key-property column="id" name="value" length="36" access="field" />
+        </composite-id>
+
+        <component name="priceAmmount" class="com.rallibau.products.prices.domain.PriceAmmount" access="field">
+            <property name="value" column="ammount" type="string" access="field" />
+        </component>
+
+        <component name="priceCurr" class="com.rallibau.products.prices.domain.PriceCurr" access="field">
+            <property name="value" column="curr" type="string" access="field" />
+        </component>
+
+        <component name="priceStartDate" class="com.rallibau.products.prices.domain.PriceStartDate" access="field">
+            <property name="value" column="priceStartDate" type="timestamp" access="field" />
+        </component>
+
+        <component name="priceEndDate" class="com.rallibau.products.prices.domain.PriceEndDate" access="field">
+            <property name="value" column="priceEndDate" type="timestamp" access="field" />
+        </component>
+
+        <component name="pricePriority" class="com.rallibau.products.prices.domain.PricePriority" access="field">
+            <property name="value" column="priority" type="integer" access="field" />
+        </component>
+
+        <component name="brandId" class="com.rallibau.products.prices.domain.BrandId" access="field">
+            <property name="value" column="brandId" type="string" access="field" />
+        </component>
+
+        <component name="productId" class="com.rallibau.products.prices.domain.ProductId" access="field">
+            <property name="value" column="productId" type="string" access="field" />
+        </component>
+
+    </class>
+</hibernate-mapping>
